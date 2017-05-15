@@ -27,11 +27,11 @@ casper.then(function () {
 });
 
 casper.run(function () {
-	console.log("Les prochaines séances : \n")
+	casper.echo("Les prochaines séances :", 'ERROR');
     for(var i in films) {
-        console.log(films[i].title);
+        casper.echo(films[i].title , 'PARAMETER');
         var horaires = films[i].horaire.join(' - ');
-        console.log(horaires);
+        casper.echo(horaires);
     }
     casper.done();
 });
